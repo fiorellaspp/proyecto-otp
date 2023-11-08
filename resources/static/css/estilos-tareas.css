@@ -1,0 +1,184 @@
+.nombreTarea,
+.nombreTareaDiv {
+    font-weight: bold;
+    font-size: 20px;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.estadoTarea,
+.estadoTareaDiv {
+    font-style: oblique;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.descripcionTarea,
+.descripcionTareaDiv {
+    font-style: oblique;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.fechaEntregaTarea,
+.fechaEntregaTareaDiv {
+    color: crimson;
+    text-align: right;
+}
+
+.nombreLista {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.mini-nav-item-custom:hover {
+    background-color: white;
+}
+
+.mini-nav-item-custom a {
+    color: black;
+}
+
+.tab-custom:hover {
+    color: black;
+    transform: scale(1.05);
+}
+
+/* ----------------------------------------------------------------------------------------- */
+.prueba2 {
+    min-height: 55vh;
+    max-height: 55vh;
+    background-color: hwb(318 38% 54% / 0.158);
+    border-radius: 15px;
+}
+
+.prueba2:hover {
+    transform: scale(1.05);
+}
+
+/* --------------------------- CSS tabla lista tareas.html -------- */
+.lista, .lista2 {
+    margin-top: 25px;
+    max-height: 60vh;
+    overflow: auto;
+}
+
+.sticky-header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+/* --------------------------- CSS DRAGGABLE tareas.html -------- */
+
+
+.facet-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    overflow: auto;
+}
+
+.listaDivMayor {
+    border: 1px solid rgb(218, 218, 218);
+    background: #1abc9c31;
+    margin: 15px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    max-width: 30%;
+    scroll-behavior: smooth;
+    scrollbar-color: red;
+/* 
+    display: inline-block;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    word-wrap: break-word;*/
+} 
+
+.prueba3 {
+    height: 90vh;
+}
+.prueba4 {
+    height: 80vh;
+}
+.prueba5 {
+    height: 10vh;
+}
+.prueba5 {
+    height: 10vh;
+
+}
+
+
+.listaDivMayor {
+    margin: 10px;
+}
+.listaDivMayor:hover {
+    background-color: #1abc9c7a;
+    
+}
+.facet-list  {
+    overflow: auto;
+    height: 50vh;
+    list-style-type: none;
+    border-radius: 15px;
+    margin: 10px;
+    background-color: #6fcfbc;
+    padding: 0;
+
+}
+
+.cardTareaDiv {
+    border: 1px solid #ccc;
+    background-color: #6fcfbc;
+    padding: 5px;
+}
+
+
+.facet-list li.placeholder ul.placeholder {
+    height: 1.2em
+}
+
+.facet {
+    border: 1px solid #bdb8b8;
+    background-color: #eee7e7;
+    cursor: move;
+    border-radius: 15px;
+}
+
+.placeholder {
+    display: block;
+    height: 5rem;
+    border-radius: 15px;
+    border: 3px solid #6fcfbc;
+    background-color: #fffffd;
+}
+
+.cardTareaDiv:hover {
+    transform: scale(0.98);
+    border: 1px solid #bdb8b8;
+
+}
+
+.filaTareaTr {
+    border-radius: 15px;
+}
+.tabla-tareas {
+    cursor: pointer;
+}
+.tabla-tareas-thead {
+    cursor: default;
+    text-align: center;
+}

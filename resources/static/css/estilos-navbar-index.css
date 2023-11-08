@@ -1,0 +1,76 @@
+/* a #1abc9c
+b #1abc9c 
+c #08836a*/
+
+body {
+    font-family: 'enriqueta';
+    background-color: aliceblue;
+}
+
+/* HEADER ----------------------------- */
+
+.navbar-custom {
+    background-color: #a5a5a5;
+    color: #16a085;
+    height: 10vh;
+    font-size: 20px;
+}
+
+.nav-item-custom {
+    height: 10vh;
+    margin: 25px 0px;
+}
+
+.nav-item-custom:hover {
+    background-color: #1abc9c;
+    color: aliceblue;
+}
+
+.div-navbar {
+    max-height: 10vh;
+}
+
+.div-principal {
+    height: 80vh;
+    overflow: auto;
+}
+
+/* HEADER BOTONES --------------------- */
+
+.btn-custom-i {
+    background-color: #1abc9c;
+    border-radius: 12px;
+    color: #f2f2f2;
+    border-style: none;
+    font-size: 18px;
+    padding: 7px 10px;
+    text-decoration: none;
+}
+
+.btn-custom-i:hover {
+    background-color: #16a085;
+    color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn-custom-i:active {
+    transform: scale(0.95);
+    background-color: #16a085;
+}
+
+/* FOOTER ----------------------------- */
+footer {
+    background-color: aliceblue;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+
+/* SNS -------------------------------- */
+.fa-brands-custom {
+    cursor: pointer;
+}
+
+.fa-brands-custom:hover {
+    transform: scale(1.2);
+}

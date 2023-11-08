@@ -1,0 +1,65 @@
+/* SECCIONES -------------------------- */
+.section {
+    height: 80vh;
+}
+
+.card-section-2 {
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.card-section-2:hover {
+    cursor: pointer;
+    background-color: #ffffff;
+    border: 1px solid #16a085;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.05);
+}
+
+#section02,
+#section04 {
+    background-color: #ffffff;
+}
+
+.button-price-custom-1 {
+    background: white;
+    border: 1px solid #1abc9c;
+
+    border-radius: 10px;
+}
+
+.button-price-custom-1:hover {
+    background: #1abc9c;
+    border-radius: 10px;
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border: 2px dashed #16a085;
+}
+
+.span-price {
+    font-size: 15px;
+    display: block;
+}
+
+/* SECCIONES, FORMS BOTONES ----------- */
+.div-section-3 {
+    background: #ffffff;
+    border-radius: 10px;
+    border-color: 5px solid #1abc9c;
+}
+
+.div-section-3:focus {
+    border-left: 10px solid #16a085;
+    box-shadow: 0px 10px 10px 0px grey;
+    background: #ffffff;
+}
+
+.div-section-3:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 10px 0px grey;
+    background: #ffffff;
+}

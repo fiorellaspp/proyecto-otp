@@ -1,0 +1,47 @@
+/* SECCIONES, FORMS TEXTOS ------------ */
+
+.texto-1 {
+    color: #16a085;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.texto-2 {
+    font-size: 24px;
+}
+
+.texto-3 {
+    color: #16a085;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.texto-4 {
+    font-size: 18px;
+}
+
+.texto-5 {
+    font-size: 14px;
+}
+
+.mensajeError {
+    font-size: 12px;
+    text-align: right;
+}
+
+.mensajeConfirmacion {
+    display: none;
+    color: darkred;
+}
+
+.texto-6-link {
+    text-decoration: none;
+    color: #333333;
+    text-align: center;
+    font-size: 14px;
+}
+
+.texto-6-link:hover {
+    text-decoration: underline;
+    color: black;
+}

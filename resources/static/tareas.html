@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página principal</title>
+    <link rel="icon" type="image/x-icon" href="img/logo2.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Enriqueta'>
+    <link rel="stylesheet" href="css/estilos-navbar-home.css">
+    <link rel="stylesheet" href="css/estilos-texto.css">
+    <link rel="stylesheet" href="css/estilos-tareas.css">
+    <script src="js/sesion.js"></script>
+    <script src="js/solicitud.js"></script>
+    <script src="js/usuario.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/tareas.js"></script>
+</head>
+
+<body>
+    <header class="sticky-top non-selectable">
+        <nav class="navbar navbar-custom">
+            <div class="container-fluid m-0">
+                <div id="menu-icon" class="icon-home navbar-element-custom">&#9776;</div>
+                <div class="dropdown text-end">
+                    <button class="btn-custom-i dropdown-toggle " type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Mi cuenta
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right container">
+                        <div id="usuario" class="dropdown-item"></div>
+                        <hr class="dropdown-divider">
+                        </hr>
+                        <a class="dropdown-item d-flex justify-content-between align-items-center disabled" href="#">
+                            <i class="fa-regular fa-user"></i>
+                            <div class="d-flex">
+                                <span>Perfil</span>
+                            </div>
+                        </a>
+                        <a class="dropdown-item d-flex justify-content-between align-items-center disabled" href="#">
+                            <i class="fa-solid fa-gear"></i>
+                            <div class="d-flex">
+                                <span>Ajustes</span>
+                            </div>
+                        </a>
+                        <hr class="dropdown-divider">
+                        </hr>
+                        <a id="btnCerrarSesion" class="dropdown-item d-flex justify-content-between align-items-center"
+                            href="index.html">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <div class="d-flex">
+                                <span id="cerrarSesion">Cerrar sesión</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="main-home container-fluid overflow-auto p-0">
+        <div id="sidebar-home" class="sidebar-home non-selectable">
+            <div class="container m-0 p-0">
+                <div class="mt-2">
+                    <a href="inicio.html" class=""><i class="fas fa-home"></i> Inicio</a>
+                    <a href="#" class="selected-option"><i class="fas fa-tasks"></i> Mis tareas</a>
+                    <hr class="dropdown-divider p-0 m-0">
+                    <a href="#" class="nav-link disabled"><i class="fas fa-project-diagram"></i> Proyectos</a>
+                    <a href="#" class="nav-link disabled"><i class="fas fa-users"></i> Equipos</a>
+                    <a href="#" class="nav-link disabled"><i class="fas fa-database"></i> Datos</a>
+                </div>
+                <hr class="dropdown-divider">
+                <a href="#" class="nav-link disabled"><i class="far fa-question-circle"></i> Ayuda</a>
+            </div>
+        </div>
+        <div class="content-home p-0 prueba3">
+            <div class="container-fluid d-flex align-items-start prueba5">
+                <div class="col-4 texto-1 mb-3">Mis tareas</div>
+            </div>
+            <div class="container-fluid m-0 p-0">
+                <div class="container-fluid prueba4">
+                    <div class="prueba6">
+                        <ul class="nav nav-tabs" id="myTabs">
+                            <li class="nav-item px-2 m-0 mini-nav-item-custom">
+                                <a class="nav-link active tab-custom" id="lista-tab" data-toggle="tab" href="#lista"
+                                    role="tab" aria-controls="lista" aria-selected="true"
+                                    onclick="alternarSeccion('lista')">Lista</a>
+                            </li>
+                            <li class="nav-item px-2 m-0 mini-nav-item-custom">
+                                <a class="nav-link tab-custom" id="tablero-tab" data-toggle="tab" href="#tablero"
+                                    role="tab" aria-controls="tablero" aria-selected="false"
+                                    onclick="alternarSeccion('tablero')">Tablero</a>
+                            </li>
+                        </ul>
+                        <div class="row justify-content-end">
+                            <div class="col-4 texto-2 text-end my-2">
+                                <button class="btn-custom-i nueva-tarea" type="button" data-bs-target="#crearTareaModal"
+                                    data-bs-toggle="modal">
+                                    Nueva tarea
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content prueba container-fluid p-0 m-0" id="myTabContent">
+                        <div class="tab-pane fade show active" id="lista" role="tabpanel" aria-labelledby="lista-tab">
+                            <hr class="m-0">
+                            <div class="lista">
+                                <table class="table table-hover tabla-tareas table-success ">
+                                    <thead class="tabla-tareas-thead">
+                                        <tr>
+                                            <th class="sticky-header">Nombre de la tarea</th>
+                                            <th class="sticky-header">Fecha de creación</th>
+                                            <th class="sticky-header">Fecha de entrega</th>
+                                            <th class="sticky-header">Estado</th>
+                                            <th class="sticky-header">Lista</th>
+                                        </tr>
+                                    </thead>
+                                    <div class="">
+                                        <tbody id="mostrarTareasLista"></tbody>
+                                    </div>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="tablero" role="tabpanel" aria-labelledby="tablero-tab">
+
+                            <div class="lista2 container-fluid non-selectable">
+                                <div id="mostrarTareasPanel"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="crearTareaModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <form id="crearTareaForm" class="needs-validation" novalidate>
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title texto-3" id="crearTareaModalLabel">Crear Tarea</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body texto-4">
+
+                            <div class="mb-2">
+                                <label for="nombreTareaCrear" class="form-label">Nombre</label>
+                                <input id="nombreTareaCrear" name="nombreTareaCrear" type="text" class="form-control"
+                                    required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="descripcionTareaCrear" class="form-label">Descripción</label>
+                                <textarea id="descripcionTareaCrear" name="descripcionTareaCrear" class="form-control"
+                                    required></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <label for="fechaEntregaTareaCrear" class="form-label">Fecha de Entrega</label>
+                                <input type="date" class="form-control" id="fechaEntregaTareaCrear"
+                                    name="fechaEntregaTareaCrear" required>
+                            </div>
+                            <div class="mb-2">
+                                <label for="idListaTareaCrear" class="form-label">Lista</label>
+                                <select id="idListaTareaCrear" class="form-select" name="idListaTareaCrear" required>
+                                    <option value="" selected></option>
+                                </select>
+                            </div>
+                            <div class="form-check">
+                                <label for="finalizadoTareaCrear" class="form-check-label">Finalizado</label>
+                                <input id="finalizadoTareaCrear" type="checkbox" class="form-check-input"
+                                    name="finalizadoTareaCrear"><br>
+                            </div>
+                            <!-- <div class="mb-2">
+                                <label for="proyecto" class="form-label">Proyecto</label>
+                                <select class="form-select" id="proyecto" name="proyecto" disabled>
+                                    <option value=""></option>
+                                    <option value="proyecto1">Proyecto 1</option>
+                                    <option value="proyecto2">Proyecto 2</option>
+                                    <option value="proyecto3">Proyecto 3</option>
+                                </select>
+                            </div> -->
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn-outline btn-custom-i bg-secondary"
+                                data-bs-dismiss="modal">Cancelar</button>
+                            <button id="btnCrearTarea" type="submit" class="btn-outline btn-custom-i">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal fade" id="actualizarTareaModal" tabindex="-1" aria-labelledby="actualizarTareaModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title texto-3" id="actualizarTareaModalLabel">Detalles de la Tarea</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="actualizarTareaForm">
+                            <div class="mb-2">
+                                <label for="nombreTareaActualizar" class="form-label">Nombre de la Tarea</label>
+                                <input type="text" class="form-control" id="nombreTareaActualizar"
+                                    name="nombreTareaActualizar">
+                            </div>
+                            <div class="mb-2">
+                                <label for="descripcionTareaActualizar" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="descripcionTareaActualizar"
+                                    name="descripcionTareaActualizar"></textarea>
+                            </div>
+                            <div class="mb-2">
+                                <label for="fechaEntregaTareaActualizar" class="form-label">Fecha de Entrega</label>
+                                <input type="date" class="form-control" id="fechaEntregaTareaActualizar"
+                                    name="fechaEntregaTareaActualizar" required>
+                            </div>
+
+                            <div class="mb-2">
+                                <label for="finalizadoTareaActualizar" class="form-label">Estado</label>
+                                <input id="finalizadoTareaActualizar" name="finalizadoTareaActualizar"
+                                    type="checkbox"><br>
+                            </div>
+                            <div class="mb-2">
+                                <label for="idListaTareaActualizar" class="form-label">Lista</label>
+                                <select id="idListaTareaActualizar" class="form-select" name="idListaTareaActualizar"
+                                    required></select>
+                            </div>
+                            <!-- <div class="mb-2">
+                                <label for="proyectoInput" class="form-label">Proyecto</label>
+                                <select class="form-select" id="proyectoInput" name="proyectoInput" disabled>
+                                    <option value=""></option>
+                                    <option value="proyecto1">Proyecto 1</option>
+                                    <option value="proyecto2">Proyecto 2</option>
+                                    <option value="proyecto3">Proyecto 3</option>
+                                </select>
+                            </div>
+                            <div class="mb-2">
+                                <label for="comentarioInput" class="form-label">Comentario</label>
+                                <textarea class="form-control" id="comentarioInput" name="comentarioInput"></textarea>
+                            </div> -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-outline btn-custom-i bg-secondary"
+                            data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btnEliminarTarea" type="button" class="btn-outline btn-custom-i bg-danger"
+                            data-bs-target="#confirmarEliminacionModal" data-bs-toggle="modal">Eliminar</button>
+                        <button id="btnActualizarTarea" type="button" class="btn-outline btn-custom-i"
+                            data-bs-target="#confirmarActualizacionModal" data-bs-toggle="modal">Guardar
+                            cambios</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="confirmarActualizacionModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar actualización</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>¿Deseas guardar los cambios de la tarea: <span id="nombreTareaModalA"></span>?</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-outline btn-custom-i bg-secondary"
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button id="btnConfimarActualizacion" type="button" class="btn-outline btn-custom-i"
+                        data-bs-dismiss="modal">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" tabindex="-1" id="confirmarEliminacionModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmar eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div>¿Deseas eliminar la tarea: <span id="nombreTareaModalE"></span>?</div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-outline btn-custom-i bg-secondary"
+                        data-bs-dismiss="modal">Cancelar</button>
+                    <button id="btnConfimarEliminacion" type="button" class="btn-outline btn-custom-i"
+                        data-bs-dismiss="modal">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" id="crearListaModal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Crear nueva lista</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="crearListaForm" class="needs-validation" novalidate>
+                    <div class="modal-body">
+                        <div class="mb-2">
+                            <label for="nombreListaNueva" class="form-label">Nombre de la lista</label>
+                            <input id="nombreListaNueva" name="nombreListaNueva" type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn-outline btn-custom-i bg-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="btnCrearLista" type="submit" class="btn-outline btn-custom-i">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* --------------- Movimiento SIDEBAR ---------------*/
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            var sidebar = document.getElementById('sidebar-home');
+            var content = document.querySelector('.content-home');
+            sidebar.classList.toggle('sidebar-home-open');
+            content.classList.toggle('content-home-open');
+        });
+
+        /* --------------- Cambiar secciones ---------------*/
+        function alternarSeccion(seccion) {
+            const tableroTab = document.getElementById("tablero-tab");
+            const listaTab = document.getElementById("lista-tab");
+            const tableroContent = document.getElementById("tablero");
+            const listaContent = document.getElementById("lista");
+
+            if (seccion === "tablero") {
+                tableroTab.classList.add("active");
+                listaTab.classList.remove("active");
+
+                tableroContent.classList.add("show", "active");
+                listaContent.classList.remove("show", "active");
+            } else if (seccion === "lista") {
+                listaTab.classList.add("active");
+                tableroTab.classList.remove("active");
+
+                listaContent.classList.add("show", "active");
+                tableroContent.classList.remove("show", "active");
+            }
+        }
+        /* --------------- Validación ---------------*/
+        (function () {
+            'use strict'
+
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+</body>
+
+</html>

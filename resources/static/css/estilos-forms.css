@@ -1,0 +1,16 @@
+.form-registro {
+    width: 400px;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0px 10px 10px 0px grey;
+    background-color: white;
+    border-radius: 15px;
+}
+
+/* FORMS ------------------------------ */
+
+.form-control-sm,
+.form-select-sm {
+    border-left: 10px solid #16a085;
+    ;
+}

@@ -1,0 +1,137 @@
+body {
+    font-family: 'enriqueta';
+}
+.dropdown-menu.dropdown-menu-right {
+    left: auto;
+    right: 0;
+}
+
+.selected-option {
+    background-color: #1abc9c;
+    cursor: default;
+}
+.texto-7 {
+    color:black;
+
+}
+
+.cardTareas{
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+
+.cardTareas:hover {
+    /* background-color: aliceblue; */
+    border: 1px #9a9a9a solid;
+}
+
+.cardTareaTitulo {
+    margin: 2px;
+    padding: 5px 12px;
+    /* border-radius: 10px; */
+    font-size: 18px;
+}
+
+.cardTareaUnica {
+    padding: 10px;
+    border-radius: 4px;
+    background-color: white;
+    border:1px #e4e4e4 solid;
+    box-shadow: 1px 1px 2px #e4e4e4;
+    margin-bottom: 5px; opacity: 1;
+}
+
+.cardTareaUnica:hover {
+    border:1px #1abc9c solid;
+    transform: scale(.98);
+    opacity: 1;
+}
+
+.btn-custom-i {
+    background-color: #1abc9c;
+    border-radius: 12px;
+    color: #f2f2f2;
+    border-style: none;
+    font-size: 15px;
+    padding: 7px 10px;
+    text-decoration: none;
+}
+
+.btn-custom-i:hover {
+    background-color: #16a085;
+    color: #ffffff;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn-custom-i:active {
+    transform: scale(0.95);
+    background-color: #16a085;
+}
+.navbar-custom {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    height: 10vh;
+}
+
+.icon-home {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sidebar-home {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: width 0.3s;
+    margin-top: 10vh;
+}
+
+.sidebar-home a {
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition: 0.2s;
+    white-space: nowrap;
+}
+
+.sidebar-home a:hover {
+    background-color: #1abc9c;
+}
+
+.sidebar-home i {
+    margin-right: 10px;
+}
+
+.content-home {
+    margin-left: 0px;
+    transition: margin-left 0.3s;
+    padding: 0px;
+}
+
+.sidebar-home-open {
+    width: 200px;
+}
+
+.content-home-open {
+    margin-left: 200px;
+}
+
+.main-home {
+    height: 90vh;
+}
+
+.non-selectable {
+    user-select: none;
+}
+.dropdown {
+    width: 20%;
+}
